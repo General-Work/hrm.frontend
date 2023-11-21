@@ -39,8 +39,13 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@felte/validator-zod": "^1.0.17",
+		"felte": "^1.2.12",
 		"iconify-icon": "^1.0.8",
+		"nanoid": "^5.0.3",
+		"svelte-french-toast": "^1.2.0",
 		"svelte-legos": "^0.2.2",
-		"tailwind-merge": "^2.0.0"
+		"tailwind-merge": "^2.0.0",
+		"zod": "^3.22.4"
 	}
 }

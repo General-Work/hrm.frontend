@@ -3,9 +3,12 @@ export interface IMenuItem {
 	icon?: string;
 	path?: string;
 	items?: IMenuItem[] | null;
+	description?: string;
+	iconBg?: string;
+	iconColor?: string;
 }
 
-export interface IPageInfo {
+export interface IRouteInfo {
 	title: string;
 	showBreadCrumb?: boolean;
 }
@@ -23,4 +26,20 @@ export interface IUserInfo {
 	initials: string;
 	permissions: string[];
 	tags: string[];
+}
+export interface IPageInfo {
+	hasNextPage: false;
+	hasPreviousPage: false;
+	nextPageUrl: string;
+	previousPageUrl: string;
+}
+
+export interface ICampaignTemplate {
+	id: number;
+	name: string;
+	notes: string;
+	message: string;
+	category: string;
+	isSystemTemplate: boolean;
+	subject?: string | null;
 }
