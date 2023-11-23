@@ -2,12 +2,13 @@
 	import ControlField from '$cmps/forms/controlField.svelte';
 	import Form from '$cmps/forms/form.svelte';
 	import TextAreaField from '$cmps/forms/textAreaField.svelte';
+	import TextEditor from '$cmps/forms/textEditor.svelte';
 	import TextField from '$cmps/forms/textField.svelte';
 	import Box from '$cmps/ui/box.svelte';
 	import PageLoader from '$cmps/ui/pageLoader.svelte';
 	import Progress from '$cmps/ui/progress.svelte';
 	import { showError } from '$lib/dev';
-	import { readSmsTemplate } from '$svc/setup';
+	import { readMailTemplate, readSmsTemplate } from '$svc/setup';
 	import { onMount } from 'svelte';
 	import * as z from 'zod';
 
@@ -20,7 +21,8 @@
 		message: '',
 		name: '',
 		notes: '',
-		isSystemTemplate: false
+		isSystemTemplate: false,
+		subject: ''
 	};
 
 	export const submit = () => {
@@ -33,7 +35,8 @@
 		name: z.string().min(1, 'Name is required').min(3, 'Enter a valid name'),
 		message: z.string().min(1, 'Message is required').min(3, 'Enter a valid message'),
 		notes: z.string().optional(),
-		isSystemTemplate: z.boolean()
+		isSystemTemplate: z.boolean(),
+		subject: z.string().min(1, 'Subject is required').min(3, 'Enter a valid subject')
 	});
 
 	function handleForm({ detail }: any) {
@@ -49,14 +52,15 @@
 			return;
 		}
 		try {
-			const res = await readSmsTemplate(recordId);
+			const res = await readMailTemplate(recordId);
 			if (res.success) {
 				const xs = res.data;
 				initialValues = {
 					message: xs.message,
 					notes: xs.notes,
 					name: xs.name,
-					isSystemTemplate: xs.isSystemTemplate
+					isSystemTemplate: xs.isSystemTemplate,
+					subject: xs.subject ?? ''
 				};
 			} else {
 				showError(res.message);
@@ -76,7 +80,7 @@
 	<Box transitionIn="slide" otherClasses="px-4 pt-3">
 		<Form
 			{initialValues}
-			class="flex flex-col gap-5"
+			class="flex flex-col gap-4"
 			{schema}
 			bind:this={form}
 			on:submit
@@ -89,14 +93,14 @@
 				placeholder="Enter name of template"
 				{readonly}
 			/>
-			<TextAreaField
-				label="Message"
-				name="message"
+			<TextField
+				label="Subject"
+				name="subject"
 				required
-				placeholder="Enter template message"
+				placeholder="Enter subject of template"
 				{readonly}
-				rows={10}
 			/>
+			<TextEditor label="Message" name="message" required />
 			<TextField label="Notes" name="notes" {readonly} />
 			<ControlField
 				label="Is a system template?"

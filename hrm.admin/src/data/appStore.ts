@@ -8,3 +8,4 @@ export let activePage = writable<IRouteInfo>({
 });
 
 export const breadCrumb = createBreadCrumb();
+export const showPageLoader = writable(false);

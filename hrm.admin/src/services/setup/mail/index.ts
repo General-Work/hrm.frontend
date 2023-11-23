@@ -7,19 +7,22 @@ const x: ICampaignTemplate[] = [
 		notes: '',
 		message: 'Welcome to ',
 		category: '',
-		isSystemTemplate: true
+		isSystemTemplate: true,
+		subject: 'Offer letter'
 	},
 	{
 		id: 2,
 		name: 'Birth day wishes',
 		notes: '',
-		message: `Hi {{firstName}},
+		message: `Dear {{firstName}},
 		We wish you a happy birthday.`,
 		category: '',
-		isSystemTemplate: false
+		isSystemTemplate: false,
+		subject: 'Happy Birthday'
 	}
 ];
-export function readSmsTemplates(): Promise<{
+
+export function readMailTemplates(): Promise<{
 	success: boolean;
 	message: string;
 	data: { totalCount: number; pageInfo: IPageInfo; items: ICampaignTemplate[] };
@@ -44,7 +47,7 @@ export function readSmsTemplates(): Promise<{
 	});
 }
 
-export function readSmsTemplate(id: number): Promise<{
+export function readMailTemplate(id: number): Promise<{
 	success: boolean;
 	message: string;
 	data: ICampaignTemplate | undefined;
@@ -62,7 +65,7 @@ export function readSmsTemplate(id: number): Promise<{
 	});
 }
 
-export function createSmsTemplates(input: any): Promise<{
+export function createMailTemplates(input: any): Promise<{
 	success: boolean;
 	message: string;
 }> {
@@ -76,7 +79,7 @@ export function createSmsTemplates(input: any): Promise<{
 	});
 }
 
-export function updateSmsTemplates(input: any): Promise<{
+export function updateMailTemplates(input: any): Promise<{
 	success: boolean;
 	message: string;
 }> {
@@ -90,7 +93,7 @@ export function updateSmsTemplates(input: any): Promise<{
 	});
 }
 
-export function deleteSmsTemplates(id: number): Promise<{
+export function deleteMailTemplates(id: number): Promise<{
 	success: boolean;
 	message: string;
 }> {

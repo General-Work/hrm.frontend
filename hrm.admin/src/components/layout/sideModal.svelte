@@ -12,8 +12,10 @@
 	const widthKind = {
 		sm: 'w-96',
 		md: 'w-[500px]',
-		lg: 'w-[650px]',
-		xl: 'w-[750px]'
+		lg: 'w-[600px]',
+		// xl: 'w-[650]'
+		xl: 'w-[750px]',
+		'2xl': 'w-[800px]'
 	};
 </script>
 
@@ -29,7 +31,7 @@
 	export let placement: 'left' | 'right' | 'top' | 'bottom' = 'right';
 	export let title = '';
 	export let id = title;
-	export let size: 'sm' | 'md' | 'lg' | 'xl' = 'sm';
+	export let size: 'sm' | 'md' | 'lg' | 'xl' | '2xl' = 'sm';
 	export let activateClickOutside = false;
 	export let buttons: IButton[] = [];
 	export let busy = false;
@@ -60,7 +62,7 @@
 		{transitionParams}
 		bind:hidden={closed}
 		{id}
-		divClass="overflow-y-hidden fixed z-[3000] pt-4 bg-white dark:bg-gray-800"
+		divClass="overflow-y-hidden fixed z-[3000] pt-4  bg-white dark:bg-gray-800"
 		{activateClickOutside}
 		bgOpacity="bg-opacity-30"
 		width={widthKind[size]}
@@ -83,7 +85,7 @@
 			<Divider otherClasses="bg-gray-300" />
 			<div class="h-full w-full">
 				<div class="flex flex-col h-full">
-					<Box otherClasses="flex-grow px-4 pt-4 h-[50px] w-full">
+					<Box otherClasses="flex-grow  h-[50px] w-full">
 						<slot />
 					</Box>
 					<div

@@ -6,7 +6,7 @@
 <div class="w-full h-full grid items-center justify-center">
 	<iconify-icon
 		class={iconColor}
-		icon="svg-spinners:3-dots-move"
+		icon="svg-spinners:blocks-shuffle-3"
 		style="font-size: {size}px;"
 	/>
 </div>

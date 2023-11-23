@@ -6,10 +6,10 @@
 	import { showError, showInfo } from '$lib/dev';
 	import { PageInfo } from '$lib/paginate';
 	import {
-		createSmsTemplates,
-		deleteSmsTemplates,
-		readSmsTemplates,
-		updateSmsTemplates
+		createMailTemplates,
+		deleteMailTemplates,
+		readMailTemplates,
+		updateMailTemplates
 	} from '$svc/setup';
 	import type { ICampaignTemplate } from '$types';
 	import { onMount } from 'svelte';
@@ -37,7 +37,7 @@
 		try {
 			// if (load) isLoading = true;
 			$showPageLoader = true;
-			const ret = await readSmsTemplates();
+			const ret = await readMailTemplates();
 			if (ret.success) {
 				const data = ret.data;
 				templates = data.items;
@@ -94,8 +94,8 @@
 			busy = true;
 			const { values } = detail;
 			const res = edit
-				? await updateSmsTemplates({ ...values, id: recordId })
-				: await createSmsTemplates(values);
+				? await updateMailTemplates({ ...values, id: recordId })
+				: await createMailTemplates(values);
 
 			if (res.success) {
 				showInfo(res.message);
@@ -120,7 +120,7 @@
 	async function handleAlert(id: number) {
 		try {
 			busy = true;
-			const res = await deleteSmsTemplates(id);
+			const res = await deleteMailTemplates(id);
 			if (res.success) {
 				showInfo(res.message);
 				closeAlert();
@@ -168,7 +168,7 @@
 				class="hover:bg-gray-300 grid p-1.5 rounded-full place-content-center"
 				><iconify-icon icon="icon-park-outline:add-one" style="font-size: 20px;" /></button
 			>
-			<Tooltip placement="left-end">New SMS Template</Tooltip>
+			<Tooltip placement="left-end">New Mail Template</Tooltip>
 		</div>
 	</div>
 	<!-- {#if isLoading}
@@ -176,7 +176,7 @@
 	{:else} -->
 	{#if templates.length}
 		<Box
-			otherClasses="w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-6"
+			otherClasses="w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-6 "
 			transitionIn="slide"
 		>
 			{#each templates as { name, category, isSystemTemplate, id }}
@@ -184,7 +184,7 @@
 					{name}
 					notes={category}
 					{isSystemTemplate}
-					avatarIcon="fa6-solid:comment-sms"
+					avatarIcon="uiw:mail"
 					color={isSystemTemplate ? 'red' : 'sky'}
 					on:view={() => handleCardClicked(id, 'view')}
 					on:edit={() => handleCardClicked(id, 'edit')}
@@ -200,7 +200,7 @@
 	{open}
 	size="md"
 	on:close={closeModal}
-	title={edit ? 'Update SMS Template' : add ? 'New SMS Template' : 'View SMS Template'}
+	title={edit ? 'Update Mail Template' : add ? 'New Mail Template' : 'View Mail Template'}
 	showModalButtons={!add && !edit ? false : true}
 	{isValid}
 	{busy}

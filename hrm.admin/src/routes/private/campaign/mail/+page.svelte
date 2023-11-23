@@ -1,15 +1,15 @@
 <script>
-	import Mail from '$modules/setup/mail/index.svelte';
+	import Mail from '$modules/campaigns/mail/index.svelte';
 	import { activePage, breadCrumb } from '$data/appStore';
 
 	$activePage = {
-		title: 'Application Setup',
+		title: 'Campaigns',
 		showBreadCrumb: true
 	};
 	breadCrumb.addToFirstIndex(
 		[
-			{ title: 'Home', path: '/private/setup' },
-			{ title: 'Mail Templates', path: '/private/setup/mail' }
+			{ title: 'Home', path: '/private/campaign' },
+			{ title: 'Mail Campaign', path: '/private/campaign/mail' }
 		],
 		true
 	);

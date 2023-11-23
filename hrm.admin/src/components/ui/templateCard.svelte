@@ -1,4 +1,20 @@
-<script>
+<script lang="ts" context="module">
+	const kind = {
+		green: 'bg-green-200/50 border-green-300',
+		orange: 'bg-orange-200/50 border-orange-300',
+		sky: 'bg-cyan-200/50 border-cyan-300',
+		red: 'bg-pink-200/50 border-pink-300'
+	};
+
+	const avatarColor = {
+		green: 'border-green-300 text-green-600 ',
+		orange: 'border-orange-300 text-orange-600 ',
+		sky: 'border-cyan-300 text-cyan-600 ',
+		red: 'border-pink-300 text-pink-600 '
+	};
+</script>
+
+<script lang="ts">
 	import { Avatar, Tooltip } from 'flowbite-svelte';
 	import { createEventDispatcher } from 'svelte';
 	export let name = '';
@@ -8,15 +24,18 @@
 	export let showView = true;
 	export let showDelete = true;
 	export let isSystemTemplate = false;
+	export let color: 'green' | 'sky' | 'orange' | 'red' = 'green';
 
 	const dispatch = createEventDispatcher();
 </script>
 
 <button
-	class="bg-green-200/50 rounded-md flex flex-col gap-3 items-center justify-center shadow-md border border-green-300 p-4 lg:aspect-square h-[14rem]"
+	class="{kind[
+		color
+	]} rounded-md flex flex-col gap-3 items-center justify-center shadow-md border p-4 lg:aspect-square h-[14rem]"
 >
 	<div class="flex flex-col items-center gap-2 flex-grow">
-		<Avatar class="w-14 h-14 border border-green-300 text-green-600 ">
+		<Avatar class="w-14 h-14 border {avatarColor[color]} ">
 			<iconify-icon icon={avatarIcon} style="font-size: 28px;" />
 		</Avatar>
 		<p class="text-center text-gray-900">{name}</p>
