@@ -29,7 +29,7 @@
 
 <fieldset class="flex flex-col gap-1.5">
 	<div class="flex items-center gap-2">
-		<input {type} class=" " {name} {id} on:change={onChange} {value} disabled={readonly} />
+		<input {type} class="  border-gray-300" {name} {id} on:change={onChange} {value} disabled={readonly} />
 		<label for={id} class="  font-medium">
 			{label}
 			{#if required}
