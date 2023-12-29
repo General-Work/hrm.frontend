@@ -54,7 +54,7 @@
 		try {
 			const res = await readMailTemplate(recordId);
 			if (res.success) {
-				const xs = res.data;
+				const xs = res.data!;
 				initialValues = {
 					message: xs.message,
 					notes: xs.notes,
