@@ -40,6 +40,8 @@
 	"dependencies": {
 		"clsx": "^2.1.0",
 		"iconify-icon": "^1.0.8",
+		"lodash": "^4.17.21",
+		"svelte-legos": "^0.2.2",
 		"tailwind-merge": "^2.2.0"
 	}
 }

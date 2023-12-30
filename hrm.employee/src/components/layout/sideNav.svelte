@@ -25,6 +25,7 @@
 				icon={item.icon}
 				href={item.path}
 				iconSize={item.iconSize}
+				count={item.count}
 			/>
 		</li>
 	{/each}

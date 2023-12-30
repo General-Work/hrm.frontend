@@ -1,6 +1,6 @@
 <script>
 	import { activePage } from "$data/appStore";
 
-  $activePage.title = 'Leave'
+  $activePage.title = 'Settings'
 </script>
-leave
+settings
