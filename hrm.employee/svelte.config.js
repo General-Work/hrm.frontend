@@ -20,7 +20,9 @@ const config = {
 			$modules: path.resolve('.', 'src', 'modules'),
 			$data: path.resolve('.', 'src', 'data'),
 			$types: path.resolve('.', 'src', 'types'),
-			$assets: path.resolve('.', 'src', 'assets')
+			$assets: path.resolve('.', 'src', 'assets'),
+			$routes: path.resolve('.', 'src', 'routes')
+
 		},
 	}
 };

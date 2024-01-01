@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AlertDialog from '$cmps/alerts/alertDialog.svelte';
 	import HeaderPanel from '$cmps/layout/headerPanel.svelte';
 	import SidePanel from '$cmps/layout/sidePanel.svelte';
 	import CommandPallete from '$cmps/ui/commandPallete.svelte';
@@ -20,15 +21,27 @@
 	};
 
 	$: rightDrawerOptions = $sideQuickActions;
+
+	let showAlert = false;
+
+	const logout = () => {};
+
+	const toggleLogout = () => {
+		if (showAlert) {
+			showAlert = false;
+		} else {
+			showAlert = true;
+		}
+	};
 </script>
 
 {#if $showSearchBox}
 	<CommandPallete on:close={(_) => ($showSearchBox = false)} />
 {/if}
-<div class="w-screen h-screen overflow-hidden">
+<div class="w-screen h-svh overflow-hidden">
 	<div class="flex w-full h-full">
 		<div class="w-[19rem] h-full hidden lg:flex">
-			<SidePanel menuItems={$menuItems} adminItems={$adminMenuItems} />
+			<SidePanel menuItems={$menuItems} adminItems={$adminMenuItems} on:click={toggleLogout} />
 		</div>
 		<div class="flex-grow flex flex-col h-full gap-4">
 			<HeaderPanel
@@ -59,7 +72,7 @@
 			<div
 				class="flex-grow overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch"
 			>
-				<SidePanel menuItems={$menuItems} adminItems={$adminMenuItems} />
+				<SidePanel menuItems={$menuItems} adminItems={$adminMenuItems} on:click={toggleLogout} />
 			</div>
 		</div>
 	</Drawer>
@@ -92,3 +105,11 @@
 		</Drawer>
 	{/if}
 </div>
+
+<AlertDialog
+	bind:open={showAlert}
+	icon="line-md:log-out"
+	message="Are you sure you want to log out?"
+	on:cancel={() => (showAlert = false)}
+	on:yes={logout}
+/>

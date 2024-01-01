@@ -5,21 +5,45 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@felte/validator-zod':
+    specifier: ^1.0.17
+    version: 1.0.17(zod@3.22.4)
   clsx:
     specifier: ^2.1.0
     version: 2.1.0
+  felte:
+    specifier: ^1.2.12
+    version: 1.2.12(svelte@4.2.4)
+  flatpickr:
+    specifier: ^4.6.13
+    version: 4.6.13
   iconify-icon:
     specifier: ^1.0.8
     version: 1.0.8
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
+  nanoid:
+    specifier: ^5.0.4
+    version: 5.0.4
+  svelecte:
+    specifier: ^3.17.2
+    version: 3.17.2
+  svelte-flatpickr:
+    specifier: ^3.3.4
+    version: 3.3.4(svelte@4.2.4)
+  svelte-french-toast:
+    specifier: ^1.2.0
+    version: 1.2.0(svelte@4.2.4)
   svelte-legos:
     specifier: ^0.2.2
     version: 0.2.2(svelte@4.2.4)
   tailwind-merge:
     specifier: ^2.2.0
     version: 2.2.0
+  zod:
+    specifier: ^3.22.4
+    version: 3.22.4
 
 devDependencies:
   '@fontsource/fira-mono':
@@ -356,6 +380,28 @@ packages:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
     dev: true
+
+  /@felte/common@1.1.8:
+    resolution: {integrity: sha512-VbEOfNLWfDx0SpCfeE+fNWDpvcntND4MFs7Lxd18RIjrZYH82D0wWe9th2oVF9QT5XzgBEdMF5NGIttcwU4sjg==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
+
+  /@felte/core@1.4.1:
+    resolution: {integrity: sha512-dUzfzug5cK93kBjG0u9F3zDM781qCJP4QwYPOpJsXbydwVseDM5BXpDqvZUFhqJsd0x1GKftkX69+iWafyASjw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      '@felte/common': 1.1.8
+    dev: false
+
+  /@felte/validator-zod@1.0.17(zod@3.22.4):
+    resolution: {integrity: sha512-rOX1chLfTcixKMPEdrMSi8zsCM685Dsoy1a5qN1G6Fyh7HYK1vSmI6SfJ7m92DOt6kV+vAP4m5rk94Y8UFIeVw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      zod: ^3.2.0
+    dependencies:
+      '@felte/common': 1.1.8
+      zod: 3.22.4
+    dev: false
 
   /@floating-ui/core@1.5.2:
     resolution: {integrity: sha512-Ii3MrfY/GAIN3OhXNzpCKaLxHQfJF9qvwq/kEJYdqDxeIHa01K8sldugal6TmeeXl+WMvhv9cnVzUTaFFJF09A==}
@@ -1372,6 +1418,16 @@ packages:
       reusify: 1.0.4
     dev: true
 
+  /felte@1.2.12(svelte@4.2.4):
+    resolution: {integrity: sha512-llg9ywCgIso48NnO6jZUy8D9vWuKE90dfIFUZPLyNKqbH1WJ0brNU6C4DkdfXtpRKlzWWHvaQkgMIezKoWlzvA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      svelte: ^3.31.0 || ^4.0.0
+    dependencies:
+      '@felte/core': 1.4.1
+      svelte: 4.2.4
+    dev: false
+
   /file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -1402,6 +1458,10 @@ packages:
       keyv: 4.5.4
       rimraf: 3.0.2
     dev: true
+
+  /flatpickr@4.6.13:
+    resolution: {integrity: sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw==}
+    dev: false
 
   /flatted@3.2.9:
     resolution: {integrity: sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==}
@@ -1850,6 +1910,12 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /nanoid@5.0.4:
+    resolution: {integrity: sha512-vAjmBf13gsmhXSgBrtIclinISzFFy22WwCYoyilZlsrRXNIHSwgFQ1bEdjRwMT3aoadeIF6HMuDRlOxzfXV8ig==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    dev: false
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
@@ -2380,6 +2446,12 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
+  /svelecte@3.17.2:
+    resolution: {integrity: sha512-dKm50Em11f4DNP3UMI+6oGUBHSrPWDOVsuG44T+2f/Vh/RVJYWjdTGJy87BfetDRTHKmuGMiwaGmMBh58tHmGg==}
+    dependencies:
+      svelte-tiny-virtual-list: 2.0.5
+    dev: false
+
   /svelte-check@3.6.0(postcss@8.4.32)(svelte@4.2.4):
     resolution: {integrity: sha512-8VfqhfuRJ1sKW+o8isH2kPi0RhjXH1nNsIbCFGyoUHG+ZxVxHYRKcb+S8eaL/1tyj3VGvWYx3Y5+oCUsJgnzcw==}
     hasBin: true
@@ -2423,6 +2495,24 @@ packages:
       postcss-scss: 4.0.9(postcss@8.4.32)
       svelte: 4.2.4
     dev: true
+
+  /svelte-flatpickr@3.3.4(svelte@4.2.4):
+    resolution: {integrity: sha512-i+QqJRs8zPRKsxv8r2GIk1fsb8cI3ozn3/aHXtViAoNKLy0j4PV7OSWavgEZC1wlAa34qi2hMkUh+vg6qt2DRA==}
+    peerDependencies:
+      svelte: '>= 3.31.0 < 5.0'
+    dependencies:
+      flatpickr: 4.6.13
+      svelte: 4.2.4
+    dev: false
+
+  /svelte-french-toast@1.2.0(svelte@4.2.4):
+    resolution: {integrity: sha512-5PW+6RFX3xQPbR44CngYAP1Sd9oCq9P2FOox4FZffzJuZI2mHOB7q5gJBVnOiLF5y3moVGZ7u2bYt7+yPAgcEQ==}
+    peerDependencies:
+      svelte: ^3.57.0 || ^4.0.0
+    dependencies:
+      svelte: 4.2.4
+      svelte-writable-derived: 3.1.0(svelte@4.2.4)
+    dev: false
 
   /svelte-hmr@0.15.3(svelte@4.2.4):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
@@ -2491,6 +2581,18 @@ packages:
       svelte: 4.2.4
       typescript: 5.2.2
     dev: true
+
+  /svelte-tiny-virtual-list@2.0.5:
+    resolution: {integrity: sha512-xg9ckb8UeeIme4/5qlwCrl2QNmUZ8SCQYZn3Ji83cUsoASqRNy3KWjpmNmzYvPDqCHSZjruBBsoB7t5hwuzw5g==}
+    dev: false
+
+  /svelte-writable-derived@3.1.0(svelte@4.2.4):
+    resolution: {integrity: sha512-cTvaVFNIJ036vSDIyPxJYivKC7ZLtcFOPm1Iq6qWBDo1fOHzfk6ZSbwaKrxhjgy52Rbl5IHzRcWgos6Zqn9/rg==}
+    peerDependencies:
+      svelte: ^3.2.1 || ^4.0.0-next.1
+    dependencies:
+      svelte: 4.2.4
+    dev: false
 
   /svelte@4.2.4:
     resolution: {integrity: sha512-hpl7nZhSY+pCL/gsXTyixmGR9H0qDrbn9TT8wfLQyX9jRZeDgIvMca7vrE/tgPXZmQpjIcJ6AsoSdAlyRCDuiQ==}
@@ -2922,3 +3024,7 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
     dev: true
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false

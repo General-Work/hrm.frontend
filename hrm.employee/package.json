@@ -2,7 +2,7 @@
 	"name": "hrm.employee",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -38,10 +38,18 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@felte/validator-zod": "^1.0.17",
 		"clsx": "^2.1.0",
+		"felte": "^1.2.12",
+		"flatpickr": "^4.6.13",
 		"iconify-icon": "^1.0.8",
 		"lodash": "^4.17.21",
+		"nanoid": "^5.0.4",
+		"svelecte": "^3.17.2",
+		"svelte-flatpickr": "^3.3.4",
+		"svelte-french-toast": "^1.2.0",
 		"svelte-legos": "^0.2.2",
-		"tailwind-merge": "^2.2.0"
+		"tailwind-merge": "^2.2.0",
+		"zod": "^3.22.4"
 	}
 }

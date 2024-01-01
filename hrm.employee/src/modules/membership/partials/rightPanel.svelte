@@ -1,10 +1,4 @@
-<script lang="ts">
-	import CardButton, { type IButtonConfig } from '$cmps/ui/cardButton.svelte';
-	import { createEventDispatcher } from 'svelte';
-
-	export let showActionLabel = false;
-	const dispatch = createEventDispatcher();
-
+<script lang="ts" context="module">
 	const actionsButtons: IButtonConfig[] = [
 		{
 			label: 'Bio Details',
@@ -43,6 +37,16 @@
 	];
 </script>
 
+<script lang="ts">
+	import { page } from '$app/stores';
+	import CardButton, { type IButtonConfig } from '$cmps/ui/cardButton.svelte';
+	import { createEventDispatcher } from 'svelte';
+
+	export let showActionLabel = false;
+	const dispatch = createEventDispatcher();
+	$: activePage = $page.url.pathname;
+</script>
+
 <div class="w-full h-full flex flex-col">
 	<div class="flex flex-col w-full gap-4">
 		<span class=" text-gray-500 font-medium" class:hidden={!showActionLabel}>Actions</span>
@@ -59,6 +63,7 @@
 						showShadow={false}
 						iconBgColor={item.iconBgColor}
 						iconColor={item.iconColor}
+						active={activePage === item.path}
 						on:click={() => dispatch('actionClicked', item)}
 					/>
 				</li>

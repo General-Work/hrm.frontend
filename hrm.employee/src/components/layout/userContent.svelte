@@ -16,6 +16,6 @@
 			<p class="text-gray-400 font-light text-sm truncate block">Content here</p>
 		</div>
 	</div>
-	<IconButton icon="mdi-light:logout" otherClasses="bg-pink-100/70 text-pink-700"/>
+	<IconButton icon="mdi-light:logout" otherClasses="bg-pink-100/70 text-pink-700" on:click/>
 	<Tooltip placement="right" color="light">Logout</Tooltip>
 </div>

@@ -99,6 +99,7 @@
 	export let moreHeight = false;
 	export let showShadow = false;
 	export let kind = 'generic';
+	export let active = false;
 
 	// when kind is set, use the defaults from the kind
 	$: if (kind) {
@@ -125,6 +126,7 @@
 	class:shadow-gray-100={showShadow}
 	class:hover:scale-95={showBg}
 	class:h-20={moreHeight}
+	class:bg-pink-50={active}
 	on:click
 >
 	<div class="flex justify-between items-center">
