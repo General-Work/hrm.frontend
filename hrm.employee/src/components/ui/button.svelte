@@ -2,6 +2,7 @@
 	const kind = {
 		success: 'bg-green-400 hover:bg-green-500 text-white',
 		primary: 'bg-blue-500 hover:bg-blue-600 text-white',
+		darkBlue: 'bg-blue-800 hover:bg-blue-900 text-white',
 		ghost: 'hover:bg-gray-100',
 		default: 'border-gray-300 border hover:bg-gray-100',
 		warning: 'bg-yellow-300  hover:bg-yellow-400',
@@ -14,7 +15,8 @@
 
 	export let label = '';
 	export let type: 'submit' | 'button' | 'reset' = 'button';
-	export let color: 'primary' | 'success' | 'warning' | 'default' | 'ghost' | 'pink' = 'default';
+	export let color: 'primary' | 'success' | 'warning' | 'default' | 'ghost' | 'pink' | 'darkBlue' =
+		'default';
 	export let disabled = false;
 	export let busy = false;
 	export let leadingIcon = '';
