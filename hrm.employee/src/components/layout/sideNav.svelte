@@ -10,7 +10,7 @@
 	const name = (str: string) => {
 		if (str) {
 			const parts = str.split('/');
-			return parts[2];
+			return parts[1];
 		}
 	};
 </script>

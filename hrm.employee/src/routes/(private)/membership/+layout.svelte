@@ -12,7 +12,7 @@
 
 	const breadCrumb = new BreadCrumb();
 
-	breadCrumb.addToFirstIndex({ title: 'Home', path: '/private/membership' });
+	breadCrumb.addToFirstIndex({ title: 'Home', path: '/membership' });
 
 	$: $breadCrumbData = breadCrumb.crumbs;
 

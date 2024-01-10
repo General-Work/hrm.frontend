@@ -4,8 +4,8 @@
 	import { breadCrumbData } from '../+layout.svelte';
 	$activePage.title = 'Membership';
 	$breadCrumbData = [
-		{ title: 'Home', path: '/private/membership' },
-		{ title: 'Bio Details', path: '/private/membership/biodata' }
+		{ title: 'Home', path: '/membership' },
+		{ title: 'Bio Details', path: '/membership/biodata' }
 	];
 </script>
 

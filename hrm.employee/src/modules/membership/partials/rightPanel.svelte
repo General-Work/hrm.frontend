@@ -4,13 +4,13 @@
 			label: 'Bio Details',
 			kind: 'form',
 			subLabel: 'Update your biography details',
-			path: '/private/membership/biodata'
+			path: '/membership/biodata'
 		},
 		{
 			label: 'Bank Details',
 			kind: 'form',
 			subLabel: 'Update your bank details',
-			path: '/private/membership/bank',
+			path: '/membership/bank',
 			icon: 'mdi:bank-outline',
 			iconBgColor: 'bg-orange-100',
 			iconColor: 'text-orange-500'
@@ -19,7 +19,8 @@
 			label: 'Family Details',
 			kind: 'generic',
 			icon: 'fluent-mdl2:family',
-			subLabel: 'Update your family details'
+			subLabel: 'Update your family details',
+			path: '/membership/familyDetails'
 		},
 		{
 			label: 'Children Details',
@@ -27,7 +28,8 @@
 			icon: 'fa6-solid:children',
 			subLabel: 'Update your children details',
 			iconBgColor: 'bg-pink-100',
-			iconColor: 'text-pink-500'
+			iconColor: 'text-pink-500',
+			path: '/membership/children'
 		},
 		{
 			label: 'Professional Licence',

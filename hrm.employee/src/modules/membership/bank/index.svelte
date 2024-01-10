@@ -1,5 +1,4 @@
 <script lang="ts">
-	import DateField from '$cmps/forms/dateField.svelte';
 	import Form from '$cmps/forms/form.svelte';
 	import SelectField from '$cmps/forms/selectField.svelte';
 	import TextField from '$cmps/forms/textField.svelte';
@@ -11,21 +10,13 @@
 
 <SlideDown transitionIn="slide">
 	<ScrollArea otherClasses="w-full h-full pt-3 px-1">
-		<Fieldset label="Contact Info" icon="fluent-mdl2:edit-contact" kind="pink">
+		<Fieldset label="Banking Info" icon="mdi:bank-outline" kind="pink">
 			<Form class="w-full h-full flex flex-col gap-6">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-					<SelectField label="Title" required />
-					<TextField label="First name" required />
-					<TextField label="Surname" required />
-					<TextField label="Other name(s)" />
-					<SelectField label="Gender" required />
-					<DateField label="Date of Birth" required />
-					<TextField label="ECOWAS Card No." />
-					<TextField label="SSNIT No." />
-					<TextField label="Phone" />
-					<TextField label="Email" />
-					<TextField label="GPS Address" />
-					<SelectField label="Disability" required />
+				<div class="grid gap-6">
+					<SelectField label="Bank Name" required />
+					<TextField label="Branch" required />
+					<SelectField label="Account Type" />
+					<TextField label="Account Number" required />
 				</div>
 				<div class="flex justify-end gap-2 md:pb-8 pt-3">
 					<Button label="Reset" type="reset" />

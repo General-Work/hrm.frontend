@@ -13,7 +13,7 @@
 		</div>
 		<div class="block w-40 pl-3">
 			<p class="truncate block">Theophilus Adusei</p>
-			<p class="text-gray-400 font-light text-sm truncate block">Content here</p>
+			<p class="text-gray-400 font-light text-sm truncate block">MS00017</p>
 		</div>
 	</div>
 	<IconButton icon="mdi-light:logout" otherClasses="bg-pink-100/70 text-pink-700" on:click/>
