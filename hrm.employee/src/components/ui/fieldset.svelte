@@ -2,7 +2,7 @@
 	import { cn } from '$lib/dev';
 
 	export let label = '';
-	export let kind: 'pink' | 'teal' | 'blue' | 'sky' = 'blue';
+	export let kind: 'pink' | 'teal' | 'blue' | 'sky' | 'none' = 'blue';
 	export let icon = '';
 	export let fieldsetDiv = '';
 	export let legendDiv = '';

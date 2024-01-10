@@ -6,7 +6,9 @@
 		ghost: 'hover:bg-gray-100',
 		default: 'border-gray-300 border hover:bg-gray-100',
 		warning: 'bg-yellow-300  hover:bg-yellow-400',
-		pink: 'bg-pink-300 hover:bg-pink-400'
+		pink: 'bg-pink-300 hover:bg-pink-400',
+		gold: 'bg-[#993306] text-white',
+		goldOutline: 'border border-[#993306] text-[#993306] disabled:border-gray-300'
 	};
 </script>
 
@@ -15,8 +17,16 @@
 
 	export let label = '';
 	export let type: 'submit' | 'button' | 'reset' = 'button';
-	export let color: 'primary' | 'success' | 'warning' | 'default' | 'ghost' | 'pink' | 'darkBlue' =
-		'default';
+	export let color:
+		| 'primary'
+		| 'success'
+		| 'warning'
+		| 'default'
+		| 'ghost'
+		| 'pink'
+		| 'gold'
+		| 'darkBlue'
+		| 'goldOutline' = 'default';
 	export let disabled = false;
 	export let busy = false;
 	export let leadingIcon = '';

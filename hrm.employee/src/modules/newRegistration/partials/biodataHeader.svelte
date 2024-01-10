@@ -1,3 +1,36 @@
-<header class="bg-pink-100 h-full">
-	<div class="container mx-auto px-40">here</div>
+<script>
+	import BG from '$assets/images/bg.jpg';
+	import { Avatar } from 'flowbite-svelte';
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
+</script>
+
+<header
+	class=" h-40"
+	style="background-image: url('{BG}'); background-size: cover; background-position: center;"
+>
+	<div class="lg:container lg:mx-auto px-2 xl:px-40 pt-5">
+		<div class="flex justify-between items-end">
+			<div class="flex items-center gap-3">
+				<Avatar class="bg-[#993306] text-white shadow-sm border shadow-white">TA</Avatar>
+				<div class="hidden md:block text-white">
+					<div class="text-sm truncate w-36 font-medium">Theophilus Adusei</div>
+					<div class="text-xs text-gray-200 font-light w-36">0240 123 456</div>
+				</div>
+			</div>
+			<button
+				class="bg-gray-50/40 px-3 py-1.5 rounded-[5px] items-center flex gap-1 text-white text-sm hover:bg-gray-50/50 font-light"
+				on:click={() => dispatch('logout')}
+			>
+				<iconify-icon icon="majesticons:logout" />
+				Logout</button
+			>
+		</div>
+		<p
+			class="py-4 lg:py-0 text-white text-2xl lg:text-3xl flex justify-center font-semibold tracking-wide"
+		>
+			Employee's Bio Details
+		</p>
+	</div>
 </header>

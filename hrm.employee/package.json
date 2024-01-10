@@ -39,7 +39,9 @@
 	"type": "module",
 	"dependencies": {
 		"@felte/validator-zod": "^1.0.17",
+		"@k4ung/svelte-otp": "^0.0.9",
 		"clsx": "^2.1.0",
+		"dayjs": "^1.11.10",
 		"felte": "^1.2.12",
 		"flatpickr": "^4.6.13",
 		"iconify-icon": "^1.0.8",
